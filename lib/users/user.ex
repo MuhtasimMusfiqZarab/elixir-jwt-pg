@@ -6,4 +6,12 @@ defmodule Users.User do
     field :password, :string
     field :token, :string
   end
+
+
+  def changeset(car, params \\ %{}) do
+  person
+  |> Ecto.Changeset.cast(params, [:name, :password, :token])
+  |> Ecto.Changeset.validate_required([:name, :password])
+end
+
 end
